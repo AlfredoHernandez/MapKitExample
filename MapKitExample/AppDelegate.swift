@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyBeaver
 
-let LOG = SwiftyBeaver.self
+let Log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     let console = ConsoleDestination() 
-    LOG.addDestination(console)
+    Log.addDestination(console)
     return true
   }
 

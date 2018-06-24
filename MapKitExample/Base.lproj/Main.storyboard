@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,22 +21,109 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uo2-T5-YCh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CTe-eM-tGb" appends="YES" id="mZQ-vy-ouS"/>
+                                </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-QJ-DB0">
+                                <rect key="frame" x="0.0" y="642" width="375" height="170"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OkC-xa-V93">
+                                        <rect key="frame" x="16" y="8" width="343" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="My Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-WK-Ejg">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="43.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Location..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L55-FF-LOv">
+                                                <rect key="frame" x="0.0" y="51.333333333333371" width="343" height="34.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Ut-v0-9VJ">
+                                        <rect key="frame" x="16" y="102" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89F-OE-Sah">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="30"/>
+                                                <color key="backgroundColor" red="0.1630667563" green="0.80234879670000003" blue="0.35113543419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="rzT-XK-1Av"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title=" Use My Location">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="useMyLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGW-lc-Yym"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hI6-zv-pp9">
+                                                <rect key="frame" x="175.66666666666663" y="0.0" width="167.33333333333337" height="30"/>
+                                                <color key="backgroundColor" red="0.16306675634722223" green="0.80234879669444448" blue="0.35113543422777777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title=" Center Map ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="goToCurrentLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="buR-dR-ce5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Ut-v0-9VJ" firstAttribute="top" secondItem="OkC-xa-V93" secondAttribute="bottom" constant="8" id="9DR-Fa-m9O"/>
+                                    <constraint firstItem="0Ut-v0-9VJ" firstAttribute="bottom" secondItem="Xbp-QJ-DB0" secondAttribute="bottomMargin" constant="4" id="GLz-te-wXr"/>
+                                    <constraint firstItem="OkC-xa-V93" firstAttribute="top" secondItem="Xbp-QJ-DB0" secondAttribute="top" constant="8" id="HBI-5a-gs9"/>
+                                    <constraint firstAttribute="trailing" secondItem="OkC-xa-V93" secondAttribute="trailing" constant="16" id="LTn-6T-qhb"/>
+                                    <constraint firstItem="OkC-xa-V93" firstAttribute="leading" secondItem="Xbp-QJ-DB0" secondAttribute="leading" constant="16" id="LxA-qY-iTw"/>
+                                    <constraint firstItem="0Ut-v0-9VJ" firstAttribute="leading" secondItem="Xbp-QJ-DB0" secondAttribute="leadingMargin" constant="8" id="Nan-5X-WPa"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0Ut-v0-9VJ" secondAttribute="trailing" constant="8" id="yAn-VQ-Ju8"/>
+                                    <constraint firstAttribute="height" constant="170" id="zcb-bP-Xd8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uo2-T5-YCh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5se-Nh-6E6"/>
                             <constraint firstItem="uo2-T5-YCh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BL4-K4-7sT"/>
                             <constraint firstItem="uo2-T5-YCh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GHR-uK-U2Q"/>
+                            <constraint firstItem="Xbp-QJ-DB0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Uz7-AS-Qhh"/>
+                            <constraint firstItem="Xbp-QJ-DB0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XfF-l6-nYP"/>
                             <constraint firstAttribute="bottom" secondItem="uo2-T5-YCh" secondAttribute="bottom" id="dqM-u7-uAb"/>
+                            <constraint firstAttribute="bottom" secondItem="Xbp-QJ-DB0" secondAttribute="bottom" id="fEW-tX-AMf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="labelAddress" destination="L55-FF-LOv" id="ceV-E1-p7U"/>
+                        <outlet property="longPressGestureRecognizer" destination="CTe-eM-tGb" id="EEN-vJ-MRa"/>
                         <outlet property="mapView" destination="uo2-T5-YCh" id="Xlv-YS-IJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CTe-eM-tGb">
+                    <connections>
+                        <action selector="addAnnotationToMap:" destination="BYZ-38-t0r" id="loL-2u-iYX"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>

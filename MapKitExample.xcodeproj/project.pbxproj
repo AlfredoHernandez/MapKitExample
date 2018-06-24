@@ -20,6 +20,8 @@
 		38775D8620E02174009433A8 /* MapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38775D8020E02174009433A8 /* MapModels.swift */; };
 		38775D8720E02174009433A8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38775D8120E02174009433A8 /* MapViewController.swift */; };
 		38775D8820E02174009433A8 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38775D8220E02174009433A8 /* MapInteractor.swift */; };
+		38775D8A20E04430009433A8 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38775D8920E04430009433A8 /* Annotation.swift */; };
+		38775D8C20E05D1E009433A8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38775D8B20E05D1E009433A8 /* Address.swift */; };
 		8A20086318DD6E0C10C03C18 /* Pods_MapKitExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679507717669EBDF5540B021 /* Pods_MapKitExampleTests.framework */; };
 		ABAA753B83A15149529DC01D /* Pods_MapKitExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CF291C5B3F88C85AA3FC10 /* Pods_MapKitExampleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		38775D8020E02174009433A8 /* MapModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModels.swift; sourceTree = "<group>"; };
 		38775D8120E02174009433A8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38775D8220E02174009433A8 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		38775D8920E04430009433A8 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		38775D8B20E05D1E009433A8 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		679507717669EBDF5540B021 /* Pods_MapKitExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapKitExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB974F3D8A26A698E2DF252 /* Pods-MapKitExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitExampleUITests/Pods-MapKitExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		70279BB3C237A68BB883C7C8 /* Pods-MapKitExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitExampleUITests/Pods-MapKitExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				38775D7C20E02146009433A8 /* Scenes */,
 				38775D4E20E02107009433A8 /* AppDelegate.swift */,
+				38775D8920E04430009433A8 /* Annotation.swift */,
+				38775D8B20E05D1E009433A8 /* Address.swift */,
 				38775D5220E02107009433A8 /* Main.storyboard */,
 				38775D5520E02109009433A8 /* Assets.xcassets */,
 				38775D5720E02109009433A8 /* LaunchScreen.storyboard */,
@@ -398,12 +404,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38775D8C20E05D1E009433A8 /* Address.swift in Sources */,
 				38775D4F20E02107009433A8 /* AppDelegate.swift in Sources */,
 				38775D8620E02174009433A8 /* MapModels.swift in Sources */,
 				38775D8520E02174009433A8 /* MapRouter.swift in Sources */,
 				38775D8420E02174009433A8 /* MapWorker.swift in Sources */,
 				38775D8320E02174009433A8 /* MapPresenter.swift in Sources */,
 				38775D8720E02174009433A8 /* MapViewController.swift in Sources */,
+				38775D8A20E04430009433A8 /* Annotation.swift in Sources */,
 				38775D8820E02174009433A8 /* MapInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,7 +589,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -597,7 +608,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -614,7 +628,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -632,7 +650,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -649,7 +671,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -666,7 +692,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HS399QXLRD;
 				INFOPLIST_FILE = MapKitExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfredohdz.MapKitExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
